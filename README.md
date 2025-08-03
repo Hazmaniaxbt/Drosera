@@ -143,7 +143,7 @@ DROSERA_PRIVATE_KEY=eth_private_key drosera apply
 - Hoodi testnet ağına geçtiğinizden emin olun.
 - Arama çubuğuna cüzdan adrsinizi yapıştırıp aratın
 
-<img width="1353" height="640" alt="Ekran Resmi 2025-08-03 13 42 43" src="https://github.com/user-attachments/assets/0b657bc5-a42a-42db-8038-35a2a3b9c6ea" />
+![telegram-cloud-photo-size-4-5798519704791403886-y](https://github.com/user-attachments/assets/b33f62e9-c9e9-4746-a5e1-88bf32352ef5)
 
  "Send Bloom Bost" ile bir miktar testEth gönderin. Faucetten token aldıkça yatırdığınız eth miktarını yükseltin. 
  
