@@ -1,26 +1,26 @@
 # Drosera Node Kurulumu ve Rol Alma Rehberi
 
-Bu repoda, Hoodi Ethereum test ağında çalışan Drosera Trap ve Drosera Node kurulum adımlarını, ayrıca Discord’da Cadet rolünün nasıl alınacağını anlatıyoruz.
+Selamlar, bu repoda Hoodi Ethereum test ağında çalışan Drosera Trap ve Drosera Node kurulum adımlarını, ayrıca Discord’da Cadet rolünün nasıl alınacağını anlatıyoruz.
 
 ## Sistem Gereksinimleri:
 
 - Ubuntu/Linux 22.04
-- Minimum: 2 vCPU 4 RAM
+- Minimum: 2 vCPU 4 RAM (benim kullandığım)
 - Önerilen: 4vCPU 8 RAM
-- Hoodi testnet'indeki test cüzdanı ve  Ethereum özel(private) kodu
-- Portlar: 31313 ve 31314
+- Hoodi testnet'indeki test cüzdanı ve  Ethereum (private) kodu
   
 
 ## Hoodi Testnet ETH (Hoodi Token)
-Faucetten testnet Eth alın
-- minning yaparak alınabilir
+Faucetten testnet Eth alalım
+
+- Minning yaparak alınabilir
 
   https://hoodi-faucet.pk910.de
 
   veya
 
--  [QuickNode Faucet](https://faucet.quicknode.com/ethereum/hoodi)  
-- [Stakely Faucet](https://stakely.io/faucet/ethereum-hoodi-testnet-eth)
+  [QuickNode Faucet](https://faucet.quicknode.com/ethereum/hoodi)  
+  [Stakely Faucet](https://stakely.io/faucet/ethereum-hoodi-testnet-eth)
 
   ## <h1 align="center">Kurulum</h1>
   
@@ -28,6 +28,7 @@ Kodları sırayla giriyoruz.
 
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y
+
 sudo apt install curl ufw iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
@@ -49,10 +50,14 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
+# Sonraki 4 satırı tek seferde kopyala yapıştır
+
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Tek tek girmeye devam
 
 sudo apt update -y && sudo apt upgrade -y
 
@@ -83,8 +88,8 @@ source ~/.bashrc
 mkdir ~/my-drosera-trap
 cd ~/my-drosera-trap
 
-git config --global user.email "github_emailinizi_yazınız"   (tırnakları kaldırmadan içine yazınız)
-git config --global user.name "github_kullanıcıadını_yazınız"   (tırnakları kaldırmadan içine yazınız)
+git config --global user.email "github_emailinizi_yazınız"   # Tırnakları kaldırmadan içine yazın
+git config --global user.name "github_kullanıcıadını_yazınız"   # Tırnakları kaldırmadan içine yazın
 
 forge init -t drosera-network/trap-foundry-template
 ```
@@ -102,7 +107,7 @@ forge build
 cd ~/my-drosera-trap
 nano drosera.toml
 ```
-drosera.toml dosyanının içine aşağıdakileri yapıştırın. İstenen yeri "Testnet_cüzdan_adresinizi_yazın" düzenleyin.
+drosera.toml dosyanının içine aşağıdan "Testnet_cüzdan_adresi" düzenleyin yapıştırın. 
 Sonra CTRL + X sonra Y ve enterlayıp çıkın
 
 ### Trap Konfigurasyon (`drosera.toml`)
@@ -124,7 +129,7 @@ min_number_of_operators = 1
 max_number_of_operators = 2
 block_sample_size = 10
 private_trap = true
-whitelist = ["Testnet_cüzdan_adresinizi_yazın"]   #(tırnakları kaldırmadan içine yazın)
+whitelist = ["Testnet_cüzdan_adresi"]  # Tırnakları kaldırmadan içine yazın
 
 ```
 
@@ -147,7 +152,7 @@ DROSERA_PRIVATE_KEY=eth_private_key drosera apply
 
  "Send Bloom Bost" ile bir miktar testEth gönderin. Faucetten token aldıkça yatırdığınız eth miktarını yükseltin. 
  
- Daha sonra Dashboarda dönüp operator kaydı yapacağız.
+ Daha sonra operator kaydı yapacağız.
 
 
  # <h1 align="center">Drosera Operator Kurulumu</h1>
@@ -212,8 +217,6 @@ services:
 
 volumes:
   drosera_data:
-
-
 ```
 
 ### .env dosyası oluşturma
@@ -235,13 +238,14 @@ docker compose up -d
 ```
 
 ```bash
+screen -S drosera
 docker compose logs -f
 ```
 
-Logları kontrol edin "successful" aldıysanız tamamdır. Durdurmak için CTRl + C
+Logları kontrol edin "successful" aldıysanız tamamdır. Screenden çıkmak için CTRl + A + D
 
 ## B. Operator Kaydı
-- eth_private_key yazan yere testnet cüzdan private kodunuzu yapıştırın sonra enterlayın
+- Eth_private_key yazan yere testnet cüzdan private kodunuzu yapıştırın sonra enterlayın
 - İşlemi ofc yazarak onaylayın.
 
 ```bash
@@ -250,9 +254,9 @@ drosera-operator register \
   --eth-private-key eth_private_key \
   --drosera-address 0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D
 ```
-- bu kodlardan sonra registered - succesful gibi ibareler görmelisiniz
+- Bu kodlardan sonra registered - succesful gibi ibareler görmelisiniz
 
-## C. trap operator kaydı
+## C. Trap Operator Kaydı
 trap_address yazan yere dashboarddan trap config yazan yere tıklayarak alabilirsiniz ve bu adresi bir yete not alıp saklayın.
 
 eth_private_key yazan yere testnet cüzdan private kodunuzu yapıştırın ve enterlayın.
@@ -265,13 +269,13 @@ drosera-operator optin \
   --eth-private-key eth_private_key_here \
   --trap-config-address trap_address
 ```
- - işlemi ofc yazarak onaylayın
- - bu kodlardan sonra registered - succesful gibi ibareler görmelisiniz
+ - Sorarsa ofc yazarak onaylayın yoksa devam
+ - Bu kodlardan sonra registered - succesful gibi ibareler görmelisiniz
 
 ## D. Port ayarlarını Yapın
 
 ```bash
-sudo ufw enable
+sudo ufw enable -y
 sudo ufw allow ssh
 sudo ufw allow 22
 sudo ufw allow 31313/tcp
@@ -279,12 +283,12 @@ sudo ufw allow 31314/tcp
 ```
 
 ### Dashboarda Operator Kaydı
-Opt-İn diyip TX i Onaylayın.
+Opt-in zaten yapmıştık
 
 ![telegram-cloud-photo-size-4-5798519704791403886-y](https://github.com/user-attachments/assets/c2f99f7d-ec09-499f-87f8-1febb4adcc75)
 
 
-Yeşiller görünmeye Başladıysa Operatorünüz Başarılıyla Kuruldu Demektir. 
+Biraz bekleyince yeşiller görünmeye başladıysa operatorünüz başarılıyla kuruldu demektir. 
 
 ![telegram-cloud-photo-size-4-5798519704791403887-y](https://github.com/user-attachments/assets/da313400-77f3-458f-832c-c9e29202784b)
 
@@ -302,7 +306,7 @@ nano src/Trap.sol
 ```
 
 #### 3- Aşağıdaki içeriği dosyanın içine yapıştırın istenen yeri değiştirin.
-"YOURDISCORD" yerine discord kullanıcı adınızı yazın. (tırnakları kaldırmayın içine yazın)
+"YOURDISCORD" yerine discord kullanıcı adınızı yazın. İsminizi değil kullanıcı adınızı burası önemli (tırnakları kaldırmayın içine yazın)
 CTRL +X sonra Y ve enterlayıp çıkın
 
 ```solidity
@@ -346,9 +350,9 @@ contract Trap is ITrap {
 nano drosera.toml
 ```
 
-dosyanın içini aşağıdaki ile değiştirip istenen yerleri girin
-OPERATOR_ADDRESS  = testnet cüzdan adresi
-TRAP_CONFIG_ADDRESS = Trap adresiniz
+Dosyanın içini aşağıdaki ile değiştirip istenen yerleri girin
+- OPERATOR_ADDRESS  = Testnet cüzdan adresi
+- TRAP_CONFIG_ADDRESS = Trap adresiniz
 
 Ctrl + X sonra Y ve enterlayıp çıkın
 
@@ -392,14 +396,14 @@ source /root/.bashrc
 drosera dryrun
 ```
 
-#### 3- Trap Apply uygula
-xxx yerine testnet cüzdan private kodunu yapıştırın
+
+### xxx yerine testnet cüzdan private kodunu yapıştırın
 
 ```bash
 DROSERA_PRIVATE_KEY=xxx drosera apply
 ```
 
-çıkan ekrana ofc yazarak enterlayın.
+Eğer sorarsa çıkan ekrana ofc yazarak enterlayın yoksa devam
 
 ---
 
@@ -431,3 +435,11 @@ cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "getDiscordNamesBatch(uint2
 ```
 ---
 ![telegram-cloud-photo-size-4-5798519704791403888-y](https://github.com/user-attachments/assets/08c1de00-9dbe-47e5-a34b-30ce9c7bdb0c)
+
+### Screen tekrar çalıştırıp loglarımıza bakalım. Screen'den çıkmak için CTRL + A + D
+
+```bash
+screen -r drosera
+docker compose logs -f
+```
+
