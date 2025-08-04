@@ -1,3 +1,5 @@
+<img width="1500" height="500" alt="resim" src="https://github.com/user-attachments/assets/46931046-4ddb-44d2-9129-5672a6855ccf" />
+
 # Drosera Node Kurulumu ve Rol Alma Rehberi
 
 Selamlar, bu repoda Hoodi Ethereum test ağında çalışan Drosera Trap ve Drosera Node kurulum adımlarını, ayrıca Discord’da Cadet rolünün nasıl alınacağını anlatıyoruz.
