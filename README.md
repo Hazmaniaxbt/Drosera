@@ -433,14 +433,12 @@ cd ~/Drosera-Network
 docker compose down -v
 docker compose up -d
 ```
-### 6. Listede Discord isminizi gördüyseniz tamamdır
+### 6. Çıkan listede Discord isminizi gördüyseniz tamamdır
 
 ```bash
 source /root/.bashrc
 cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "getDiscordNamesBatch(uint256,uint256)(string[])" 0 2000 --rpc-url https://rpc.hoodi.ethpandaops.io
 ```
----
-![telegram-cloud-photo-size-4-5798519704791403888-y](https://github.com/user-attachments/assets/08c1de00-9dbe-47e5-a34b-30ce9c7bdb0c)
 
 ### Screen tekrar çalıştırıp loglarımıza bakalım. Screen'den çıkmak için CTRL + A + D
 
