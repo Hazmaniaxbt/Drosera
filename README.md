@@ -7,13 +7,13 @@ Selamlar, bu repoda Hoodi Ethereum test ağında çalışan Drosera Trap ve Dros
 - Ubuntu/Linux 22.04
 - Minimum: 2 vCPU 4 RAM (benim kullandığım)
 - Önerilen: 4vCPU 8 RAM
-- Hoodi testnet'indeki test cüzdanı ve  Ethereum (private) kodu
+- Hoodi testnet'indeki test cüzdanı ve  Ethereum private key
   
 
 ## Hoodi Testnet ETH (Hoodi Token)
 Faucetten testnet Eth alalım
 
-- Minning yaparak alınabilir
+- Mining yaparak alınabilir
 
   https://hoodi-faucet.pk910.de
 
