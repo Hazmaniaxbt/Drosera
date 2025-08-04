@@ -92,8 +92,8 @@ source ~/.bashrc
 mkdir ~/my-drosera-trap
 cd ~/my-drosera-trap
 
-git config --global user.email "github_emailinizi_yazınız"   # Tırnakları kaldırmadan içine yazın
-git config --global user.name "github_kullanıcıadını_yazınız"   # Tırnakları kaldırmadan içine yazın
+git config --global user.email "github_email"   # Tırnakları kaldırmadan yazın
+git config --global user.name "github_kullanıcı_adı"
 
 forge init -t drosera-network/trap-foundry-template
 ```
