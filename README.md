@@ -2,6 +2,10 @@
 
 Selamlar, bu repoda Hoodi Ethereum test ağında çalışan Drosera Trap ve Drosera Node kurulum adımlarını, ayrıca Discord’da Cadet rolünün nasıl alınacağını anlatıyoruz.
 
+Takıldığınız yerleri [grubumuzda](https://t.me/GoldenZoneWeb3) sorabilirsiniz.
+
+Drosera [Discord](https://discord.gg/pGMae277)
+
 ## Sistem Gereksinimleri:
 
 - Ubuntu/Linux 22.04
