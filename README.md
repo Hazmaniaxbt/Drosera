@@ -14,9 +14,14 @@ Drosera [Discord](https://discord.gg/pGMae277)
 - Minimum: 2 vCPU 4 RAM (benim kullandığım)
 - Önerilen: 4vCPU 8 RAM
 - Hoodi testnet'indeki test cüzdanı ve  Ethereum private key
+
+
+## Ön Hazırlık
+
+Herhangi bir sunucu seçebilirsiniz ben [Hetzner](https://hetzner.cloud/?ref=5p4lj5PZKsew) kullanıyorum. Uzun zamandır hiçbir sıkıntı yaşamadım. İlk kayıtta KYC sonrası hesabınıza  20€ tanımlanacaktır.
   
 
-## Hoodi Testnet ETH (Hoodi Token)
+## Hoodi Testnet ETH
 Faucetten testnet Eth alalım
 
 - Mining yaparak alınabilir
