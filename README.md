@@ -133,7 +133,7 @@ whitelist = ["Testnet_cüzdan_adresi"]  # Tırnakları kaldırmadan içine yazı
 
 ```
 
-### Apply Uygulayın
+### Apply Diyoruz
 
 eth_private_key yerine testnet cüzdanınızın private kodunu yapıştırın
   
