@@ -1,6 +1,6 @@
 <img width="1500" height="500" alt="resim" src="https://github.com/user-attachments/assets/46931046-4ddb-44d2-9129-5672a6855ccf" />
 
-# Drosera Node Kurulumu ve Rol Alma Rehberi
+## <h1 align="center">Drosera Node Kurulumu ve Rol Alma Rehberi</h1>
 
 Selamlar, bu repoda Hoodi Ethereum test ağında çalışan Drosera Trap ve Drosera Node kurulum adımlarını, ayrıca Discord’da Cadet rolünün nasıl alınacağını anlatıyoruz.
 
@@ -118,7 +118,7 @@ forge build
 cd ~/my-drosera-trap
 nano drosera.toml
 ```
-drosera.toml dosyanının içine aşağıdan "Testnet_cüzdan_adresi" düzenleyin yapıştırın. 
+drosera.toml dosyanının içini silip aşağıdan "Testnet_cüzdan_adresi" düzenleyin ve tamamını yapıştırın. Hızlı silme için CTRL + K
 Sonra CTRL + X sonra Y ve enterlayıp çıkın
 
 ### Trap Konfigurasyon (`drosera.toml`)
@@ -231,8 +231,8 @@ volumes:
 ```
 
 ### .env dosyası oluşturma
-Aynı klasörde  `nano .env` yapıp, env dosyası oluşturun. açılan dosyanın içine aşağıdaki iki satırı yapıştırın. 
-- istenen yerleri düzenleyin. CTRL +X sonra Y ve enterlayıp çıkın
+Aynı klasörde  `nano .env` yapıp, env dosyası oluşturun. Açılan dosyanın içine aşağıdaki iki satırı yapıştırın. 
+- İstenen yerleri düzenleyin. CTRL + X + Y ve enterlayıp çıkın
 
 ```env
 ETH_PRIVATE_KEY=eth_private_key
@@ -361,7 +361,7 @@ contract Trap is ITrap {
 nano drosera.toml
 ```
 
-Dosyanın içini aşağıdaki ile değiştirip istenen yerleri girin
+Dosyanın içini tamamen silip aşağıdaki ile değiştirin ve istenen yerleri girin
 - OPERATOR_ADDRESS  = Testnet cüzdan adresi
 - TRAP_CONFIG_ADDRESS = Trap adresiniz
 
